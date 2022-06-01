@@ -1,4 +1,3 @@
 # Google Software Product Sprint
 
-
-This repo contains Jack's portfolio and SPS projects.
+This repo contains Zhe He's portfolio and SPS projects
