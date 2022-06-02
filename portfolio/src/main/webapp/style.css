@@ -5,6 +5,11 @@ body {
     background-image: url("resource/Background.jpeg");
     color: cornsilk;
     background-attachment: fixed;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: left;
   }
   
   aside {
@@ -15,11 +20,10 @@ body {
     margin-left: 62%;
     line-height: 1.6;
     background-color: darkslategray;
-    position : fixed
+    position: fixed;
+    text-align: left;
   }
   
   #greeting-container {
     margin-top: 10px;
   }
-  
-  
