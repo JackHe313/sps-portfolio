@@ -1,20 +1,25 @@
-#content {
-  margin: 0 auto;
-  width: 65%;
-}
-
-aside {
-  width: 15%;
-  margin-top: 100px;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  float: right;
-  line-height: 1.6;
-  background-color: lightgray
-}
-
-#greeting-container {
-  margin-top: 10px;
-}
-
+body {
+    margin-left: 20%;
+    margin-right: 0;
+    width: 60%;
+    background-image: url("resource/Background.jpeg");
+    color: cornsilk;
+    background-attachment: fixed;
+  }
+  
+  aside {
+    width: 14%;
+    opacity: 0.75;
+    margin-top: 100px;
+    padding: 10px;
+    margin-left: 62%;
+    line-height: 1.6;
+    background-color: darkslategray;
+    position : fixed
+  }
+  
+  #greeting-container {
+    margin-top: 10px;
+  }
+  
+  
