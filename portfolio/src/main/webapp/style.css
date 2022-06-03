@@ -1,14 +1,4 @@
-body {
-    margin-left: 20%;
-    margin-right: 0;
-    width: 60%;
-    background-image: url("resource/Background.jpeg");
-    color: cornsilk;
-    background-attachment: fixed;
-    text-align: center;
-  }
-  
-  @media only screen and (max-width: 740px) {
+@media only screen and (max-width: 740px) {
     body {
       margin-left: 5%;
       width: 90%;
@@ -20,36 +10,32 @@ body {
     }
   }
   
-  .button {
-    background-color: forestgreen;
-    border-radius: 4px;
-    color: white;
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
   }
   
-  .button:hover {
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  .button:active {
-    background-color: forestgreen;
-    box-shadow: 0 1px #666;
-    transform: translateY(3px);
-  }
-  
-  /* unvisited link */
   a:link {
     color: aquamarine;
   }
   
-  /* visited link */
   a:visited {
     color: aquamarine;
   }
   
-  hr.new1 {
-    border: 1px dashed;
+  aside.left {
+    width: 10%;
+    padding: 10px;
+    margin-left: -20%;
+    line-height: 1.6;
+    float: left;
+    text-align: center;
   }
-  
   
   aside.right {
     width: 13%;
@@ -63,13 +49,49 @@ body {
     text-align: left;
   }
   
-  aside.left {
-    width: 10%;
-    padding: 10px;
-    margin-left: -20%;
-    line-height: 1.6;
-    float: left;
+  body {
+    margin-left: 20%;
+    margin-right: 0;
+    width: 60%;
+    background-image: url("resource/Background.jpeg");
+    color: cornsilk;
+    background-attachment: fixed;
     text-align: center;
+  }
+  
+  .button {
+    background-color: forestgreen;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .button:active {
+    background-color: forestgreen;
+    box-shadow: 0 1px #666;
+    transform: translateY(3px);
+  }
+  
+  .button:hover {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .right_side_buttons {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  
+  #greeting-container {
+    margin-top: 10px;
+  }
+  
+  hr.SectionDivider {
+    border: 1px dashed;
+  }
+  
+  .hobbyImage {
+    width: 300px;
+    height: 250px;
   }
   
   /* Style the tab */
@@ -90,46 +112,25 @@ body {
     transition: 0.3s;
   }
   
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: rgb(208, 202, 180);
-  }
-  
-  /* Create an active/current tablink class */
   .tab button.active {
     background-color: cornsilk;
     font-size: large;
     opacity: 1.0;
   }
   
-  /* Style the tab content */
+  .tab button:hover {
+    background-color: rgb(208, 202, 180);
+  }
+  
   .tabcontent {
     display: none;
     padding: 6px;
     border-top: none;
-  }
-  
-  .tabcontent {
     animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
-  }
-  
-  /* Go from zero to full opacity */
-  @keyframes fadeEffect {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
   
   .textcontent {
     width: 90%;
     margin-left: 5%;
     background-color: rgba(169, 169, 169, 0.222);
-  }
-  
-  #greeting-container {
-    margin-top: 10px;
   }
