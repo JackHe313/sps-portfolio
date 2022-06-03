@@ -31,7 +31,7 @@ function addRandomGreeting() {
     greetingContainer.innerText = greeting;
   }
   
-  function openTag(evt, TabName) {
+function openTag(evt, TabName) {
     var i, tabcontent, tablinks;
   
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -45,4 +45,4 @@ function addRandomGreeting() {
     document.getElementById(TabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-  
+ 
