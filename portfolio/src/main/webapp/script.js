@@ -45,4 +45,4 @@ function addRandomGreeting() {
     document.getElementById(TabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-  
+ 

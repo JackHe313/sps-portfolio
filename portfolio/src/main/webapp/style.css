@@ -1,26 +1,4 @@
-@media only screen and (max-width: 740px) {
-    body {
-      margin-left: 5%;
-      width: 90%;
-    }
-  
-    aside {
-      width: 14%;
-      margin-left: 75%;
-    }
-  }
-  
-  @keyframes fadeEffect {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  a:link {
+a:link {
     color: aquamarine;
   }
   
@@ -75,12 +53,6 @@
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
   
-  .right_side_buttons {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-  }
-  
   #greeting-container {
     margin-top: 10px;
   }
@@ -94,12 +66,38 @@
     height: 250px;
   }
   
-  /* Style the tab */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media only screen and (max-width: 740px) {
+    body {
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    aside {
+      width: 14%;
+      margin-left: 75%;
+    }
+  }
+  
+  .right_side_buttons {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  
   .tab {
     overflow: hidden;
   }
   
-  /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: cornsilk;
     opacity: 0.7;
