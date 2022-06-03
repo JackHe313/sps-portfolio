@@ -1,19 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jack's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<aside class="right">
+  <img class="right_side_buttons" src="resource/github.jpeg" align="absmiddle" />
+  <a href="https://github.com/JackHe313" target="_blank">My github account</a>
+  <br>
+  <img class="right_side_buttons" src="resource/linkedin.png" align="absmiddle" />
+  <a href="https://www.linkedin.com/in/zhe-he-408131227/" target="_blank">My linkedin account</a>
+  <br>
+  <img class="right_side_buttons" src="resource/pdf.png" align="absmiddle" />
+  <a href="/resource/RESUME-Zhe He.pdf" download> My CV.pdf </a>
+  <br>
+  <img class="right_side_buttons" src="resource/email.jpeg" align="absmiddle" />
+  <a a href="mailto:jackhe313@g.ucla.edu"> Contact Me </a>
+
+  <br>
+  <p>Get a funfact:
+    <button class="button" onclick="addRandomGreeting()">About Myself</button>
+  </p>
+  </div>
+  <div id="greeting-container"></div>
+</aside>
+
+
+<body>
+  <h1>Jack He's Portfolio</h1>
+  <hr>
+  <img src="resource/me.jpeg" style="width:150px;height:150px;border-radius:150px;outline: solid;float: right;" />
+  <h2 style="text-align: left">Introduction</h2>
+  <div style="margin-left:150px">
+    <p>This is my portfolio.</p>
+    <p>Hi! I am a first-year now studying Computer Science and Engineering at UCLA</p>
+    <p>Currently living in LA</p>
+  </div>
+  <hr>
+  <aside class="left">
+    <div class="tab">
+      <button class="tablinks" onclick="openTag(event, 'Projects')">Projects</button>
+      <br>
+      <button class="tablinks" onclick="openTag(event, 'Hobbies')" id="defaultOpen">Hobbies</button>
     </div>
-  </body>
+  </aside>
+  <div id="Hobbies" class="tabcontent">
+    <h2 style="text-align: left">My hobbies</h2>
+    <h3>Golfing</h3>
+    <img class="hobbyImage" src="resource/golf1.JPG"/>
+    <img class="hobbyImage" src="resource/golf2.jpeg"/>
+    <br>
+    <hr class="SectionDivider">
+    <h3>Snowboarding</h3>
+    <video width="580" height="300" controls autoplay muted>
+      <source src="resource/snow1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <hr class="SectionDivider">
+    <h3>Anime</h3>
+    <img class="hobbyImage" src="resource/anime1.jpg"/>
+    <img class="hobbyImage" src="resource/anime2.jpeg"/>
+    <br>
+  </div>
+
+  <div id="Projects" class="tabcontent">
+    <h2 style="text-align: left">My Projects</h2>
+    <div class="textcontent">
+      <h3>Courses</h3>
+      <p>CS31 introduction to programing language I</p>
+      <p>CS32 introduction to programing language II</p>
+      <p>CS33 Introduction to Computer Organization</p>
+      <br>
+    </div>
+    <hr class="SectionDivider">
+    <div class="textcontent">
+      <h3>Extracurricular Activities</h3>
+      <br>
+      <h4 style="text-align: left;">Hack on the Hill (UCLA ACM Hackathon) Feb 26, 2022</h4>
+      <p style="text-align: left; text-indent: 50px">: we built a synchronizes alarm clocks mobile app,
+        making multiple devices ring together at the same time
+        to prevent somehow the owner's phone doesn't work.</p>
+      <h4 style="text-align: left;">Robot club</h4>
+      <p style="text-align: left; text-indent: 50px">
+        Award :01/2018 The second award/ First Lego league/Beijing/Group</p>
+      <br>
+    </div>
+    <hr class="SectionDivider">
+    <div class="textcontent">
+      <h3>Programming Language</h3>
+      <br>
+      <h4>CPP, JAVA, JAVASCRIPT, HTML, CSS, PYTHON</h4>
+      <br>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("defaultOpen").click(); //open default
+  </script>
+
+</body>
+
 </html>
