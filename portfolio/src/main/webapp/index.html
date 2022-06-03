@@ -7,48 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
-<aside>
-  <style>
-    @media only screen and (max-width: 740px) {
-      body {
-        margin-left: 5%;
-        width: 90%;
-      }
-      aside {
-        width: 14%;
-        margin-left: 75%;
-      }
-    }
-    .button {
-      background-color: forestgreen;
-      border-radius: 4px;
-      color: white;
-    }
 
-    .button:hover {
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .button:active {
-      background-color: forestgreen;
-      box-shadow: 0 1px #666;
-      transform: translateY(3px);
-    }
-
-    /* unvisited link */
-    a:link {
-      color: aquamarine;
-    }
-
-    /* visited link */
-    a:visited {
-      color: aquamarine;
-    }
-
-    hr.new1 {
-      border: 1px dashed;
-    }
-  </style>
+<aside class="right">
   <img src="resource/github.jpeg" style="width:20px;height:20px;border-radius:4px;" align="absmiddle" />
   <a href="https://github.com/JackHe313" target="_blank">My github account</a>
   <br>
@@ -57,6 +17,9 @@
   <br>
   <img src="resource/pdf.png" style="width:20px;height:20px;border-radius:4px;" align="absmiddle" />
   <a href="/resource/RESUME-Zhe He.pdf" download> My CV.pdf </a>
+  <br>
+  <img src="resource/email.jpeg" style="width:20px;height:20px;border-radius:4px;" align="absmiddle" />
+  <a a href="mailto:jackhe313@g.ucla.edu"> Contact Me </a>
 
   <br>
   <p>Get a funfact:
@@ -64,32 +27,81 @@
   </p>
   </div>
   <div id="greeting-container"></div>
-
 </aside>
+
 
 <body>
   <h1>Jack He's Portfolio</h1>
   <hr>
-  <h2>Introduction</h2>
-  <p>This is my portfolio.</p>
-  <p>Hi! I am a first-year now studying Computer Science and Engineering at UCLA</p>
-  <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+  <img src="resource/me.jpeg" style="width:150px;height:150px;border-radius:150px;outline: solid;float: right;" />
+  <h2 style="text-align: left">Introduction</h2>
+  <div style="margin-left:150px">
+    <p>This is my portfolio.</p>
+    <p>Hi! I am a first-year now studying Computer Science and Engineering at UCLA</p>
+    <p>Currently living in LA</p>
+  </div>
   <hr>
-  <h2>My hobbies</h2>
-  <h3>Golfing</h3>
-  <img src="resource/golf1.JPG" style="width:300px;height:250px;" />
-  <img src="resource/golf2.jpeg" style="width:300px;height:250px;" />
-  <hr class="new1">
-  <h3>Snowboarding</h3>
-  <video width="580" height="300" control autoplay muted>
-    <source src="resource/snow1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <aside class="left">
+    <div class="tab">
+      <button class="tablinks" onclick="openTag(event, 'Projects')">Projects</button>
+      <br>
+      <button class="tablinks" onclick="openTag(event, 'Hobbies')" id="defaultOpen">Hobbies</button>
+    </div>
+  </aside>
+  <div id="Hobbies" class="tabcontent">
+    <h2 style="text-align: left">My hobbies</h2>
+    <h3>Golfing</h3>
+    <img src="resource/golf1.JPG" style="width:300px;height:250px;" />
+    <img src="resource/golf2.jpeg" style="width:300px;height:250px;" />
+    <br>
+    <hr class="new1">
+    <h3>Snowboarding</h3>
+    <video width="580" height="300" controls autoplay muted>
+      <source src="resource/snow1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <hr class="new1">
+    <h3>Anime</h3>
+    <img src="resource/anime1.jpg" style="width:300px;height:250px;" />
+    <img src="resource/anime2.jpeg" style="width:300px;height:250px;" />
+    <br>
+  </div>
 
-  <hr class="new1">
-  <h3>Anime</h3>
-  <img src="resource/anime1.jpg" style="width:300px;height:250px;" />
-  <img src="resource/anime2.jpeg" style="width:300px;height:250px;" />
+  <div id="Projects" class="tabcontent">
+    <h2 style="text-align: left">My Projects</h2>
+    <div class="textcontent">
+      <h3>Courses</h3>
+      <p>CS31 introduction to programing language I</p>
+      <p>CS32 introduction to programing language II</p>
+      <p>CS33 Introduction to Computer Organization</p>
+      <br>
+    </div>
+    <hr class="new1">
+    <div class="textcontent">
+      <h3>Extracurricular Activities</h3>
+      <br>
+      <h4 style="text-align: left;">Hack on the Hill (UCLA ACM Hackathon) Feb 26, 2022</h4>
+      <p style="text-align: left; text-indent: 50px">: we built a synchronizes alarm clocks mobile app,
+        making multiple devices ring together at the same time
+        to prevent somehow the owner's phone doesn't work.</p>
+      <h4 style="text-align: left;">Robot club</h4>
+      <p style="text-align: left; text-indent: 50px">
+        Award :01/2018 The second award/ First Lego league/Beijing/Group</p>
+      <br>
+    </div>
+    <hr class="new1">
+    <div class="textcontent">
+      <h3>Programming Language</h3>
+      <br>
+      <h4>CPP, JAVA, JAVASCRIPT, HTML, CSS, PYTHON</h4>
+      <br>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("defaultOpen").click(); //open default
+  </script>
 
 </body>
 

@@ -8,12 +8,51 @@ body {
     text-align: center;
   }
   
-  h2 {
-    text-align: left;
+  @media only screen and (max-width: 740px) {
+    body {
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    aside {
+      width: 14%;
+      margin-left: 75%;
+    }
   }
   
-  aside {
-    width: 14%;
+  .button {
+    background-color: forestgreen;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .button:hover {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .button:active {
+    background-color: forestgreen;
+    box-shadow: 0 1px #666;
+    transform: translateY(3px);
+  }
+  
+  /* unvisited link */
+  a:link {
+    color: aquamarine;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: aquamarine;
+  }
+  
+  hr.new1 {
+    border: 1px dashed;
+  }
+  
+  
+  aside.right {
+    width: 13%;
     opacity: 0.75;
     margin-top: 100px;
     padding: 10px;
@@ -22,6 +61,73 @@ body {
     background-color: darkslategray;
     position: fixed;
     text-align: left;
+  }
+  
+  aside.left {
+    width: 10%;
+    padding: 10px;
+    margin-left: -20%;
+    line-height: 1.6;
+    float: left;
+    text-align: center;
+  }
+  
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: cornsilk;
+    opacity: 0.7;
+    width: 100%;
+    float: center;
+    font-family: Georgia, serif;
+    outline: none;
+    cursor: pointer;
+    padding: 14px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: rgb(208, 202, 180);
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: cornsilk;
+    font-size: large;
+    opacity: 1.0;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px;
+    border-top: none;
+  }
+  
+  .tabcontent {
+    animation: fadeEffect 1s;
+    /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .textcontent {
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgba(169, 169, 169, 0.222);
   }
   
   #greeting-container {
