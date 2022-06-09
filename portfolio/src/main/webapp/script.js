@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+function addRandomFunFact() {
     const greetings =
         ['As you can see from the image, I love golfing⛳️', 
           'I am from Beijing, China', 
@@ -27,7 +27,7 @@ function addRandomGreeting() {
     const greeting = greetings[Math.floor(Math.random() * greetings.length)];
   
     // Add it to the page.
-    const greetingContainer = document.getElementById('greeting-container');
+    const greetingContainer = document.getElementById('Funfact-container');
     greetingContainer.innerText = greeting;
   }
   
@@ -44,5 +44,12 @@ function addRandomGreeting() {
     }
     document.getElementById(TabName).style.display = "block";
     event.currentTarget.className += " active";
+  }
+
+  async function showGreeting() {
+      const responseFromServer= await fetch('/hello');
+      const textFromResponse = await responseFromServer.text();
+      const dateContainer = document.getElementById('greeting-container');
+      dateContainer.innerText = textFromResponse;
   }
   
