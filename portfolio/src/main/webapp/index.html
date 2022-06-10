@@ -20,7 +20,14 @@
   <br>
   <img class="right_side_buttons" src="resource/email.jpeg" align="absmiddle" />
   <a a href="mailto:jackhe313@g.ucla.edu"> Contact Me </a>
-
+  
+  <form action="/form-handler" method="POST">
+    <p>Enter contact information here:</p>
+    <textarea name="text-input-name">Name</textarea>
+    <textarea name="text-input-email">Email</textarea>
+    <br/>
+    <input type="submit" />
+  </form>
   <br>
   <p>Get a funfact:
     <button class="button" onclick="addRandomFunFact()">About Myself</button>
@@ -97,17 +104,11 @@
       <br>
     </div>
   </div>
-
-  <form action="/form-handler" method="POST">
-    <p>Enter some text here:</p>
-    <textarea name="text-input">hello world</textarea>
-    <br/>
-    <input type="submit" />
-  </form>
+  
   <hr class="SectionDivider">
   <button onclick="showGreeting();"> Say Hi! </button>
-    <div id="greeting-container"></div>
-  
+  <div id="greeting-container"></div>
+
   <script>
     document.getElementById("defaultOpen").click(); //open default
   </script>
