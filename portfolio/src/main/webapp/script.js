@@ -48,8 +48,21 @@ function addRandomFunFact() {
 
   async function showGreeting() {
       const responseFromServer= await fetch('/hello');
-      const textFromResponse = await responseFromServer.text();
+      const textFromResponse = await responseFromServer.json();
       const dateContainer = document.getElementById('greeting-container');
-      dateContainer.innerText = textFromResponse;
+      dateContainer.innerHTML = '';
+      dateContainer.appendChild(
+        createListElement('First greeting: ' + textFromResponse[0]));
+      dateContainer.appendChild(
+        createListElement('Second greeting: ' + textFromResponse[1]));
+      dateContainer.appendChild(
+        createListElement('Third greeting: ' + textFromResponse[2]));
   }
+
+  function createListElement(text) {
+    const liElement = document.createElement('li');
+    liElement.innerText = text;
+    return liElement;
+  }
+
   
