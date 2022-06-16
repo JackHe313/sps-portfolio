@@ -17,18 +17,8 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-
-    if(!request.getParameter("text-input-name").matches("[\\w*\\s*]*")){
-        request.setAttribute("error", "Please enter only letters, numbers, and spaces for names.");
-        response.getWriter().println("Please enter only letters, numbers, and spaces for names.");
-        response.sendRedirect("https://zhe-sps-summer22.appspot.com/");
-    }
-    else if(!request.getParameter("text-input-email").matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$")){
-        request.setAttribute("error", "Please enter correct email format.");
-        response.getWriter().println("Please enter correct email format.");
-        response.sendRedirect("https://zhe-sps-summer22.appspot.com/");
-    }
-    else{
+    String error = validateInput(request);
+    if (error.isEmpty()) {
     // Get the value entered in the form.
     String textValueName = request.getParameter("text-input-name");
     String textValueEmail = request.getParameter("text-input-email");
@@ -40,8 +30,12 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Write the value to the response so the user can see it.
     response.getWriter().println(textValueName + " submitted contact email: " + textValueEmail);
-    response.sendRedirect("https://zhe-sps-summer22.appspot.com/");
     }
+    else{
+    response.getWriter().println("Input information error, please check for your spelling!");
+    }
+
+    response.sendRedirect("https://zhe-sps-summer22.appspot.com/");
   }
 
   public void writeToDatastore(String textValueName, String textValueEmail){
@@ -54,5 +48,15 @@ public class FormHandlerServlet extends HttpServlet {
             .build();
     
     datastore.put(contactEntity);
+  }
+
+  public String validateInput(HttpServletRequest request){
+    if(!request.getParameter("text-input-name").matches("[\\w*\\s*]*")){
+        return "error";
+    }
+    if(!request.getParameter("text-input-email").matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$")){
+        return "error";
+    }
+    return "";
   }
 }
