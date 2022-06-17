@@ -23,21 +23,8 @@ public class FormHandlerServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("contact").setOrderBy(OrderBy.desc("name")).build();
-    QueryResults<Entity> results = datastore.run(query);
-
-    List<String> contacts = new ArrayList<>();
-    while (results.hasNext()) {
-      Entity entity = results.next();
-
-      String name = entity.getString("name");
-      String email = entity.getString("email");
-
-      String contact = name +"'s email: " +email;
-      contacts.add(contact);
-    }
+    
+    List<String> contacts = getContact();
     Gson gson = new Gson();
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(contacts));
@@ -87,5 +74,29 @@ public class FormHandlerServlet extends HttpServlet {
         return "error";
     }
     return "";
+  }
+
+  public QueryResults<Entity> readFromDatastore() {
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    Query<Entity> query =
+        Query.newEntityQueryBuilder().setKind("contact").setOrderBy(OrderBy.desc("name")).build();
+    QueryResults<Entity> results = datastore.run(query);
+    return results;
+  }
+
+  public List<String> getContact() {
+    QueryResults<Entity> results = readFromDatastore();
+
+    List<String> contacts = new ArrayList<>();
+    while (results.hasNext()) {
+      Entity entity = results.next();
+
+      String name = entity.getString("name");
+      String email = entity.getString("email");
+
+      String contact = name +"'s email: " +email;
+      contacts.add(contact);
+    }
+    return contacts;
   }
 }
