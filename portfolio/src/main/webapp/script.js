@@ -65,4 +65,20 @@ function addRandomFunFact() {
     return liElement;
   }
 
+  function loadContacts() {
+    fetch('/form-handler').then(response => response.json()).then((contacts) => {
+      const contactListElement = document.getElementById('contact-list');
+      contactListElement.innerHTML = '';
+      contacts.forEach((contact) => {
+        contactListElement.appendChild(createContactElement(contact));
+      })
+    });
+  }
+
+  function createContactElement(contact) {
+    const contactElement = document.createElement('li');
+    contactElement.innerText = contact;
+    return contactElement;
+  }
+
   

@@ -21,13 +21,6 @@
   <img class="right_side_buttons" src="resource/email.jpeg" align="absmiddle" />
   <a a href="mailto:jackhe313@g.ucla.edu"> Contact Me </a>
   
-  <form action="/form-handler" method="POST">
-    <p>Enter contact information here:</p>
-    <textarea name="text-input-name">Name</textarea>
-    <textarea name="text-input-email">Email</textarea>
-    <br/>
-    <input type="submit" />
-  </form>
   <br>
   <p>Get a funfact:
     <button class="button" onclick="addRandomFunFact()">About Myself</button>
@@ -52,6 +45,8 @@
       <button class="tablinks" onclick="openTag(event, 'Projects')">Projects</button>
       <br>
       <button class="tablinks" onclick="openTag(event, 'Hobbies')" id="defaultOpen">Hobbies</button>
+      <br>
+      <button class="tablinks" onclick="openTag(event, 'contactInfos')">contact</button>
     </div>
   </aside>
   <div id="Hobbies" class="tabcontent">
@@ -103,6 +98,22 @@
       <h4>CPP, JAVA, JAVASCRIPT, HTML, CSS, PYTHON</h4>
       <br>
     </div>
+  </div>
+
+  <div id="contactInfos" class="tabcontent">
+
+  <form action="/form-handler" method="POST">
+    <p>Enter contact information here:</p>
+    <textarea name="text-input-name">Name</textarea>
+    <textarea name="text-input-email">Email</textarea>
+    <br/>
+    <input type="submit" />
+  </form>
+  <br>
+
+    <h1>Contact List</h1>
+    <button onclick="loadContacts();"> See all contact infos! </button>
+    <div id="contact-list"></div>
   </div>
   
   <hr class="SectionDivider">

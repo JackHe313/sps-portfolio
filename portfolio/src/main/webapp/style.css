@@ -126,6 +126,10 @@ a:link {
     border-top: none;
     animation: fadeEffect 1s;
   }
+
+  .tablinks {
+    text-align: center;
+  }
   
   .textcontent {
     width: 90%;
